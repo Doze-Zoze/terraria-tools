@@ -1,0 +1,13 @@
+body {
+    color:white;
+    background-color:#262626;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+input, select, button {
+    color: white;
+    background-color: #484848;
+    border-color: #5d5d5d;
+}
+
