@@ -7,6 +7,8 @@ function search() {
     var index = weapons.findIndex(r => r.name === weaponName);
     document.getElementById("weaponDamage").value = weapons[index].damage;
     document.getElementById("weaponCrit").value = weapons[index].crit;
+    document.getElementById("weaponUseTime").value = weapons[index].usetime;
+    document.getElementById("weaponMeleeSpeed").value = weapons[index].meleespeed;
 
 }
 
