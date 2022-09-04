@@ -11,7 +11,7 @@ function search() {
 }
 
 var select = document.getElementById('weaponName');
-for (var i = 0; i<=weapons.length; i++){
+for (var i = 0; i < weapons.length; i++){
     console.log(i)
     var opt = document.createElement('option');
     opt.value = weapons[i].name;
