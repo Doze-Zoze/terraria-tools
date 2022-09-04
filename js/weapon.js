@@ -3,6 +3,7 @@ var weapons = [
         name: "Terra Blade",
         id: 757,
         damage:115,
+        damagetype:"melee",
         knockback:6.5,
         crit: 4,
         usetime: 14,
@@ -10,6 +11,9 @@ var weapons = [
         rarity: 8,
         sell: 200000,
         meleespeed: 1,
+        mana: false,
+        usesammo: false,
+        damagemult:"1"
     },
     {
         name: "True Night's Edge",

@@ -1,13 +1,19 @@
 :root {
-    --foreground-bg:#5f4940;
-    --foreground-border-bright: #6b564e;
+    --foreground-bg:#614c42;
+    --foreground-border-bright: #33231e;
     --foreground-border-dark: #33231e;
-    --backdrop-bg: #4f3932;
+    --backdrop-bg: #5a433a;
     --backdrop-border: #4a3930;
     --text: white;
     --input-bg: #484848;
     --input-border: #5d5d5d;
     --background: #739664;
+}
+
+.divider {
+    border-radius: 5px;
+    border-color: black;
+    border-width: 1px;
 }
 
 div#title {
@@ -24,6 +30,11 @@ div#title > *{
 body {
     color:var(--text);
     background-color:var(--background);
+    background-image: url(https://terraria.wiki.gg/images/0/0e/Site-background-overworld.jpg);
+    background-size: cover;
+    height: auto;
+    min-height: 100%;
+    background-repeat: no-repeat;
     line-height: 1.5;
     font-family: sans-serif;
 }
