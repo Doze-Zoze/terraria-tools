@@ -1,13 +1,69 @@
+:root {
+    --foreground-bg:#5f4940;
+    --foreground-border-bright: #6b564e;
+    --foreground-border-dark: #33231e;
+    --backdrop-bg: #4f3932;
+    --backdrop-border: #4a3930;
+    --text: white;
+    --input-bg: #484848;
+    --input-border: #5d5d5d;
+    --background: #739664;
+}
+
+div#title {
+    background-color: var(--backdrop-bg);
+    border: var(--backdrop-border);
+    margin:0 0 7px 0;
+    padding:10px;
+    display: flex;
+}
+div#title > *{
+    margin:auto;
+}
+
 body {
-    color:white;
-    background-color:#262626;
+    color:var(--text);
+    background-color:var(--background);
     line-height: 1.5;
     font-family: sans-serif;
 }
 
 input, select, button {
-    color: white;
-    background-color: #484848;
-    border-color: #5d5d5d;
+    color: var(--text);
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
 }
 
+.inputField {
+    max-width: 400px;
+    margin-left: 0.5em;
+    margin-right:0.5em;
+}
+
+.divider {
+    background-color: var(--foreground-bg);
+    border-color: var(--foreground-border-bright) var(--foreground-border-dark) var(--foreground-border-dark) var(--foreground-border-bright);
+    padding: 5px;
+    border-style: solid;
+    margin:10px;
+    max-width:20em;
+    flex-basis:20em;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+div#FlexContainer {
+    background-color: var(--backdrop-bg);
+    border: var(--backdrop-border);
+}
+div#FlexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    border-style:solid;
+    max-width: 1536px;
+    margin: 0 auto;
+}
+
+.divider > * {
+    margin: 0.25em;
+}
