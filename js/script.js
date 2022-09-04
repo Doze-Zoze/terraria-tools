@@ -1,5 +1,7 @@
 import weapons from './weapon.js';
 
+ document.getElementById("NameSearch").addEventListener("click", search);
+
 function search() {
     var weaponName = document.getElementById("weaponName").value;
     index = weapons.findIndex(r => r.name === weaponName);
