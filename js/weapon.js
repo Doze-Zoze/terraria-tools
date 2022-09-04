@@ -24,4 +24,4 @@ var weapons = [
         meleespeed: 1
     }
 ];
-export default weapons;
+export { weapons };
