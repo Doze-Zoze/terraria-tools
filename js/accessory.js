@@ -1,0 +1,67 @@
+var accessory = [
+    {
+        name: "",
+        dmg: 0,
+        dmgMelee: 0,
+        dmgRanged: 0,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0,
+        crit:0,
+        inflictDebuff: [],
+        armorPenetration: 0,
+        minionSlot: 0
+    },
+    {
+        name: "Warrior Emblem",
+        dmg: 0,
+        dmgMelee: 0.15,
+        dmgRanged: 0,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0,
+        crit:0,
+        inflictDebuff: [],
+        armorPenetration: 0,
+        minionSlot: 0
+    },
+    {
+        name: "Destroyer Emblem",
+        dmg: 0.1,
+        dmgMelee: 0,
+        dmgRanged: 0,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0,
+        crit:0.08,
+        inflictDebuff: [],
+        armorPenetration: 0,
+        minionSlot: 0
+    },
+    {
+        name: "Avenger Emblem",
+        dmg: 0.12,
+        dmgMelee: 0,
+        dmgRanged: 0,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0,
+        crit:0,
+        inflictDebuff: [],
+        armorPenetration: 0,
+        minionSlot: 0
+    }
+];
+export { accessory };

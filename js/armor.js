@@ -1,0 +1,20 @@
+armorHead = [
+    {
+
+    }
+]
+armorBody = [
+    {
+
+    }
+]
+armorLegs = [
+    {
+
+    }
+]
+armorSet = [
+    {
+        
+    }
+]

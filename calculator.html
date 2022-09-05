@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Damage Calculator & Reforge Helper</title>
+    <link rel="stylesheet" href="./styles.css">
+<body>
+    <script type="module" src="js/calculator.js"></script>
+    <div id="title"><a href="./index.html">Home</a><a>Damage Calculator</a><a>Made By DozeZoze</a></div>
+    <div id="FlexContainer">
+        <div id="WeaponStatsBox" class="divider">
+            <a class="boxTitle">Weapon Base Stats</a>
+            <span class = "wrapper">
+                <label class="label" for="weaponName">Weapon Name </label>
+                <select name="WeaponSelect" id="weaponName" class="dropdown"></select>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponDamage"> Weapon Base Damage </label>
+                <input name="searchTxt" type="text" maxlength="512" id="weaponDamage" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponCrit"> Weapon Base Crit Chance </label>
+                <input name="searchTxt" type="text" maxlength="512" id="weaponCrit" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponUseTime"> Weapon Base Use Time </label>
+                <input name="searchTxt" type="text" maxlength="512" id="weaponUseTime" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponMeleeSpeed"> Weapon Melee Speed modifier </label>
+                <input name="searchTxt" type="text" maxlength="512" id="weaponMeleeSpeed" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponName">Weapon Damage Class </label>
+                <select name="WeaponSelect" id="weaponDamageType" class="dropdown">
+                    <option value="melee">Melee</option>
+                    <option value="ranged">Ranged</option>
+                    <option value="magic">Magic</option>
+                    <option value="summon">Summon</option>
+                    <option value="other">Other (Modded)</option>
+                </select>
+            </span>
+        </div>
+        <div id="ReforgeBox" class="divider">
+            <a class="boxTitle">Weapon Reforge</a>
+            <span class = "wrapper">
+                <select name="reforgeSelect" id="weaponReforge" class="dropdown"></select>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponReforge"> Reforge Damage Bonus </label>
+                <input name="reforgeSelect" id="reforgeDamage" class="inputField"></input>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponReforge"> Reforge Crit Bonus</label>
+                <input name="reforgeSelect" id="reforgeCrit" class="inputField"></input>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="weaponReforge"> Reforge Speed Bonus </label>
+                <input name="reforgeSelect" id="reforgeSpeed" class="inputField"></input>
+            </span>
+        </div>
+        <div id="BoostedStatsBox" class="divider">
+            <a class="boxTitle">Weapon Stats</a>
+            <span class = "wrapper">
+                <button type="button" id="BoostCalculate">Calculate</button>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostDamageMult">Weapon Damage Bonuses</label>
+                <input name="searchTxt" type="text" maxlength="512" id="boostDamageMult" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostCritMult">Crit Chance Bonuses</label>
+                <input name="searchTxt" type="text" maxlength="512" id="boostCritMult" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostUseTimeMult"> Use Time Bonuses </label>
+                <input name="searchTxt" type="text" maxlength="512" id="boostUseTimeMult" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostMeleeSpeedMult"> Melee Speed Bonuses </label>
+                <input name="searchTxt" type="text" maxlength="512" id="boostMeleeSpeedMult" class="inputField"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostDamage">Total Damage</label>
+                <a name="searchTxt" id="boostDamage" class="dataoutput"></a>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostCrit">Total Crit Chance </label>
+                <a name="searchTxt" id="boostCrit" class="dataoutput"></a>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="boostUseTime">Total Use Time </label>
+                <a name="searchTxt" id="boostUseTime" class="dataoutput"></a>
+            </span>
+        </div>
+        <div id="EquipmentDetailBox" class="divider">
+            <a class="boxTitle">Equipment</a>
+            <span class="wrapper">
+                <label class="label" for="armorHead">Armor</label>
+                <select id="armorHead" class="dropdown"></select>
+                <select id="armorChest" class="dropdown"></select>
+                <select id="armorLegs" class="dropdown"></select>
+
+            </span>
+            <!--<span class = "wrapper">
+                <label class="label" for="accesorySlotCount">Accessory Slots </label>
+                <select id="accesorySlotCount" class="dropdown">
+                    <option value="5">5</option>
+                    <option value="6">6 (Expert/Master)</option>
+                    <option value="7">7 (Master Only)</option>
+                   <option value="8">8 (Modded Only)</option>
+                    <option value="9">9 (Modded Only)</option>
+                    <option value="10">10 (Modded Only)</option>
+                </select>
+            </span>-->
+            <span class = "wrapper">
+                <label class="label" for="weaponName">Accessories </label>
+                <select id="accesorySlot1" class="dropdown"></select>
+                <select id="accesorySlot2" class="dropdown"></select>
+                <select id="accesorySlot3" class="dropdown"></select>
+                <select id="accesorySlot4" class="dropdown"></select>
+                <select id="accesorySlot5" class="dropdown"></select>
+                <select id="accesorySlot6" class="dropdown"></select>
+                <select id="accesorySlot7" class="dropdown"></select>
+            </span>
+            <span class = "wrapper">
+                <button type="button" id="equipCalculate">Calculate Boosts</button>
+            </span>
+        </div>
+        <div id="EquipmentStatBox" class="divider">
+            <a class="boxTitle">Equipment Stat Boosts</a>
+            <span class = "wrapper">
+                <button type="button" id="equipmentToggle">Toggle Labels</button>
+            </span>
+            <span class="wrapper">
+                <label class="label accessoryHide" for="accessory_dmg">Classless Damage Boost </label>
+                <a id="acessory_dmg" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgMelee">Melee Damage Boost </label>
+                <a id="acessory_dmgMelee" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgRanged">Ranged Damage Boost </label>
+                <a id="acessory_dmgRanged" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgMagic">Magic Damage Boost </label>
+                <a id="acessory_dmgMagic" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgSummon">Summon Damage Boost </label>
+                <a id="acessory_dmgSummon" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgArrow">Arrow Damage Boost </label>
+                <a id="acessory_dmgArrow" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgBullet">Bullet Damage Boost </label>
+                <a id="acessory_dmgBullet" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_dmgRocket">Rocket Damage Boost </label>
+                <a id="acessory_dmgRocket" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_meleeSpeed">Melee Speed Boost </label>
+                <a id="acessory_meleeSpeed" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_crit">Crit Chance Booost </label>
+                <a id="acessory_crit" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_inflictDebuff">Inflicting Debuffs </label>
+                <a id="acessory_inflictDebuff" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_armorPenetration">Armor Penetration  </label>
+                <a id="acessory_armorPenetration" class="dataoutput"></a>
+                <label class="label accessoryHide" for="accessory_minionSlot">Minion Slots </label>
+                <a id="acessory_minionSlot" class="dataoutput"></a>
+            </span>
+        </div>
+
+        <div id="DamageOutputBox" class="divider">
+            <a class="boxTitle">Damage Stats</a>
+            <span class = "wrapper">
+                <button type="button" id="DamageCalculate">Calculate</button>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="enemyDefense">Enemy Defense</label>
+                <input name="searchTxt" type="text" maxlength="512" id="enemyDefense" class="inputField" value="0"/>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="damageOut">Average Damage per hit</label>
+                <a name="DamageOut" id="damageOut" class="dataoutput">???</a>
+            </span>
+            <span class = "wrapper">
+                <label class="label" for="DPSOut">Average Damage per Second</label>
+                <a name="DPSOut" id="DPSOut" class="dataoutput">???</a>
+            </span>
+        </div>
+        
+    </div>
+</body>
+</html>

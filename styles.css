@@ -1,27 +1,86 @@
 :root {
     --foreground-bg:#614c42;
-    --foreground-border-bright: #33231e;
-    --foreground-border-dark: #33231e;
+    --foreground-border: #000000;
     --backdrop-bg: #5a433a;
     --backdrop-border: #4a3930;
     --text: white;
-    --input-bg: #484848;
-    --input-border: #5d5d5d;
-    --background: #739664;
+    --input-bg: #2c2421;
+    --background: linear-gradient(0deg, rgb(98, 150, 76) 0%, rgb(135, 201, 221) 100%);
+    --shaded-bg: #483730;
 }
-
-.divider {
-    border-radius: 5px;
-    border-color: black;
-    border-width: 1px;
+.label {
+    font-size: 0.8em;
 }
-
+.wrapper {
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.boxTitle {
+    text-align: center;
+    border-bottom: 1px ;
+    border-bottom-style: solid;
+    border-bottom-color: var(--foreground-border);
+    font-size: 1.2em;
+}
+input {
+    max-height: 1em;
+}
 div#title {
     background-color: var(--backdrop-bg);
     border: var(--backdrop-border);
-    margin:0 0 7px 0;
-    padding:10px;
+    margin:0 auto 7px auto;
+    padding:0px;
     display: flex;
+    text-align: center;;
+    border-radius: 10px;
+    font-size: 2em;
+    border-style: solid;
+}
+#title > * {
+    flex-grow: 1;
+}
+#title > :first-child {
+    text-align: left;
+    padding: 0 15px;
+    font-size: 0.75em;
+    flex-basis: 0px;
+    flex-shrink: 1;
+    color:var(--input-bg);
+}
+#title > :last-child {
+    text-align: right;
+    padding: 0 15px;
+    font-size: 0.75em;
+    flex-basis: 0px;
+    flex-shrink: 1;
+    color:var(--input-bg);
+}
+
+div#FlexContainer {
+    background-color: var(--backdrop-bg);
+    border: var(--backdrop-border);
+    display: flex;
+    flex-flow: row wrap;
+    border-style:solid;
+    margin: 0 auto;
+    border-radius: 10px;
+    justify-content: center;
+    height: 100%;
+}
+
+@media (min-width:960px) {
+    div#title, #FlexContainer {
+        max-width: 66%;
+    }
+    
+}
+@media (max-width:960px) {
+    div#title {
+        max-width: 100%;
+    }
+    
 }
 div#title > *{
     margin:auto;
@@ -29,8 +88,8 @@ div#title > *{
 
 body {
     color:var(--text);
-    background-color:var(--background);
-    background-image: url(https://terraria.wiki.gg/images/0/0e/Site-background-overworld.jpg);
+    background:var(--background);
+    /*background-image: url(https://terraria.wiki.gg/images/0/0e/Site-background-overworld.jpg);*/
     background-size: cover;
     height: auto;
     min-height: 100%;
@@ -38,11 +97,20 @@ body {
     line-height: 1.5;
     font-family: sans-serif;
 }
-
-input, select, button {
+select, button {
     color: var(--text);
+    background-color: var(--shaded-bg);
+    border-color: var(--shaded-bg);
+    border-radius: 5px;
+    border-width: 0px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    min-height: 1.5em;
+}
+
+button:active {
     background-color: var(--input-bg);
-    border-color: var(--input-border);
+    border-color: var(--backdrop-border);
 }
 
 .inputField {
@@ -51,30 +119,52 @@ input, select, button {
     margin-right:0.5em;
 }
 
+
 .divider {
     background-color: var(--foreground-bg);
-    border-color: var(--foreground-border-bright) var(--foreground-border-dark) var(--foreground-border-dark) var(--foreground-border-bright);
+    border-color: var(--foreground-border);
     padding: 5px;
     border-style: solid;
     margin:10px;
     max-width:20em;
+    min-width: 17.5em;
     flex-basis:20em;
     flex:1;
     display:flex;
     flex-direction:column;
+    border-radius: 10px;
+    border-width: 1px;
 }
-div#FlexContainer {
-    background-color: var(--backdrop-bg);
-    border: var(--backdrop-border);
+.line {
+    height: 0px;
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: var(--foreground-border);
+    margin: 4px;
 }
-div#FlexContainer {
-    display: flex;
-    flex-flow: row wrap;
-    border-style:solid;
-    max-width: 1536px;
-    margin: 0 auto;
-}
-
 .divider > * {
     margin: 0.25em;
+}
+
+.dataoutput {
+    border-style: none;
+    border-bottom-style: solid;
+    border-color: var(--backdrop-bg);
+    background-color: var(--backdrop-bg);
+    min-height: 1.5em;
+    max-width: 400px;
+    margin-left: 0.5em;
+    margin-right:0.5em;
+}
+
+input {
+    color: var(--text);
+    background-color: var(--backdrop-bg);
+    border-style: none;
+    border-bottom-style: solid;
+    border-color: var(--input-bg);
+    border-width: 2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    min-height: 1.5em;
 }
