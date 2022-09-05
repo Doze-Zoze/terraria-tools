@@ -3,16 +3,7 @@ var accessory = [
         name : "",
         defense: 0,
         dmg: {
-            all: 0,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
-        },
-        crit: {
+            inUse: 0,
             all: 0,
             melee: 0,
             ranged: 0,
@@ -22,7 +13,28 @@ var accessory = [
             magic: 0,
             summon: 0,
         },
-        armorPenetration: [],
+        crit: {
+            inUse: 0,
+            all: 0,
+            melee: 0,
+            ranged: 0,
+            arrow: 0,
+            bullet: 0,
+            rocket: 0,
+            magic: 0,
+            summon: 0
+        },
+        armorPenetration: {
+            inUse: 0,
+            all: 0,
+            melee: 0,
+            ranged: 0,
+            arrow: 0,
+            bullet: 0,
+            rocket: 0,
+            magic: 0,
+            summon: 0
+        },
         meleeSpeed: 0,
         moveSpeed: 0,
         ammoConsumption: 0,
@@ -33,198 +45,52 @@ var accessory = [
         aggro: 0,
         minionSlots: 0,
         sentrySlots: 0,
-        inflictDebuff: [],
+        damageReduction:0,
         specialEffect: []
     },
     {
         name: "Avenger Emblem",
-        defense: 0,
         dmg: {
-            all: 0.12,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
-        },
-        crit: {
-            all: 0,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0,
-        },
-        armorPenetration: [],
-        meleeSpeed: 0,
-        moveSpeed: 0,
-        ammoConsumption: 0,
-        maxMana: 0,
-        manaConsumption:0,
-        lifeRegen: 0,
-        damageReduction: 0,
-        aggro: 0,
-        minionSlots: 0,
-        sentrySlots: 0,
-        inflictDebuff: [],
-        specialEffect: []
+            all: 0.12
+        }
     },
     {
         name: "Destroyer Emblem",
-        defense: 0,
         dmg: {
             all: 0.1,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
         },
         crit: {
             all: 0.08,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0,
-        },
-        armorPenetration: [],
-        meleeSpeed: 0,
-        moveSpeed: 0,
-        ammoConsumption: 0,
-        maxMana: 0,
-        manaConsumption:0,
-        lifeRegen: 0,
-        damageReduction: 0,
-        aggro: 0,
-        minionSlots: 0,
-        sentrySlots: 0,
-        inflictDebuff: [],
-        specialEffect: []
+        }
     },
     {
         name: "Fire Gauntlet",
-        defense: 0,
         dmg: {
-            all: 0,
             melee: 0.12,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
         },
-        crit: {
-            all: 0,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0,
-        },
-        armorPenetration: [],
         meleeSpeed: 0.12,
-        moveSpeed: 0,
-        ammoConsumption: 0,
-        maxMana: 0,
-        manaConsumption:0,
-        lifeRegen: 0,
-        damageReduction: 0,
-        aggro: 0,
-        minionSlots: 0,
-        sentrySlots: 0,
-        inflictDebuff: [{
-            name:"Hellfire",
-            class:"melee"}],
-        specialEffect: [{
-            name:"knockbackMultiply",
-            value: 2
-        }]
+        specialEffect: [
+                {
+                name:"HellfireMelee",
+                value: [2,2,2,4,4,4,8,8]
+            },
+            {
+                name:"knockbackMultiplyMelee",
+                value: 2
+            }
+        ]
     },
     {
         name: "Ranger Emblem",
-        defense: 0,
         dmg: {
-            all: 0,
-            melee: 0,
             ranged: 0.15,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
         },
-        crit: {
-            all: 0,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0,
-        },
-        armorPenetration: [],
-        meleeSpeed: 0,
-        moveSpeed: 0,
-        ammoConsumption: 0,
-        maxMana: 0,
-        manaConsumption:0,
-        lifeRegen: 0,
-        damageReduction: 0,
-        aggro: 0,
-        minionSlots: 0,
-        sentrySlots: 0,
-        inflictDebuff: [],
-        specialEffect: []
     },
     {
         name: "Warrior Emblem",
-        defense: 0,
         dmg: {
-            all: 0,
-            melee: 0,
-            ranged: 0.15,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0
-        },
-        crit: {
-            all: 0,
-            melee: 0,
-            ranged: 0,
-            arrow: 0,
-            bullet: 0,
-            rocket: 0,
-            magic: 0,
-            summon: 0,
-        },
-        armorPenetration: [],
-        meleeSpeed: 0,
-        moveSpeed: 0,
-        ammoConsumption: 0,
-        maxMana: 0,
-        manaConsumption:0,
-        lifeRegen: 0,
-        damageReduction: 0,
-        aggro: 0,
-        minionSlots: 0,
-        sentrySlots: 0,
-        inflictDebuff: [],
-        specialEffect: []
+            melee: 0.15,
+        }
     }
 ];
 export { accessory };

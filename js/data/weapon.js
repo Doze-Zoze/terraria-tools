@@ -11,13 +11,13 @@ var weapon = [
         velocity: "0",
         rarity: "0",
         sell: "0",
-        meleeSpeed: "0",
+        meleeSpeedMult: "0",
         mana: false,
         ammo: false,
         projectileDmg: 0,
         projectileUseTime: 0,
         canMelee: true,
-        inflictDebuff: []
+        specialEffect: []
     },
     {
         name: "Fetid Baghnakhs",
@@ -31,13 +31,13 @@ var weapon = [
         velocity: 0,
         rarity: 8,
         sell: 100000,
-        meleeSpeed: 0.25,
+        meleeSpeedMult: 0.25,
         mana: false,
         ammoType: "none",
         projectileDmg: 0,
         projectileUseTime: 0,
         canMelee: true,
-        inflictDebuff: []
+        specialEffect: []
     },
     {
         name: "SDMG",
@@ -51,13 +51,13 @@ var weapon = [
         velocity: 12,
         rarity: 10,
         sell: 150000,
-        meleeSpeed: 0,
+        meleeSpeedMult: 0,
         mana: false,
         ammoType: "bullet",
         projectileDmg: 1,
         projectileUseTime:5,
         canMelee: false,
-        inflictDebuff: []
+        specialEffect: []
     },
     {
         name: "Terra Blade",
@@ -71,13 +71,13 @@ var weapon = [
         velocity: 12,
         rarity: 8,
         sell: 200000,
-        meleeSpeed: 1,
+        meleeSpeedMult: 1,
         mana: false,
         ammoType: "none",
         projectileDmg: 1.5,
         projectileUseTime: 14,
         canMelee: true,
-        inflictDebuff: []
+        specialEffect: []
     },
     {
         name: "True Night's Edge",
@@ -91,13 +91,13 @@ var weapon = [
         velocity: 10,
         rarity: 8,
         sell: 100000,
-        meleeSpeed: 1,
+        meleeSpeedMult: 1,
         mana: false,
         ammoType: "none",
         projectileDmg: 1,
         projectileUseTime:0,
         canMelee: true,
-        inflictDebuff: []
+        specialEffect: []
         
     }
 ];
@@ -106,7 +106,7 @@ var bullet = [
     {
         name: "Musket Ball",
         damage: 7,
-        inflictDebuff: [],
+        specialEffect: [],
     }
 ]
 export { weapon };

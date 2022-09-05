@@ -103,7 +103,7 @@ var reforgeMagic = [{
 
 var reforgeAccessory = [
     {
-        name: "None",
+        name: "",
         tier: 0,
         value: 0,
         defense: 0,
@@ -129,7 +129,7 @@ var reforgeAccessory = [
         tier: 2,
         value: 0.44,
         defense: 0,
-        damage: 0.4,
+        damage: 0.04,
         crit: 0,
         meleeSpeed: 0,
         moveSpeed: 0,
@@ -141,7 +141,7 @@ var reforgeAccessory = [
         value: 0.44,
         defense: 0,
         damage: 0,
-        crit: 0.4,
+        crit: 0.04,
         meleeSpeed: 0,
         moveSpeed: 0,
         mana: 0
@@ -152,8 +152,8 @@ var reforgeAccessory = [
         value: 0.44,
         defense: 0,
         damage: 0,
-        crit: 0.4,
-        meleeSpeed: 0.4,
+        crit: 0,
+        meleeSpeed: 0.04,
         moveSpeed: 0,
         mana: 0
     },
@@ -165,7 +165,7 @@ var reforgeAccessory = [
         damage: 0,
         crit: 0,
         meleeSpeed: 0,
-        moveSpeed: 0.4,
+        moveSpeed: 0.04,
         mana: 0
     },
     {
