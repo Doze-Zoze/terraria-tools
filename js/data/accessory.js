@@ -16,9 +16,9 @@ var accessory = [
         minionSlot: 0
     },
     {
-        name: "Warrior Emblem",
-        dmg: 0,
-        dmgMelee: 0.15,
+        name: "Avenger Emblem",
+        dmg: 0.12,
+        dmgMelee: 0,
         dmgRanged: 0,
         dmgMagic: 0,
         dmgSummon: 0,
@@ -48,9 +48,43 @@ var accessory = [
         minionSlot: 0
     },
     {
-        name: "Avenger Emblem",
-        dmg: 0.12,
+        name: "Fire Gauntlet",
+        dmg: 0,
+        dmgMelee: 0.12,
+        dmgRanged: 0,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0.12,
+        crit:0,
+        inflictDebuff: [{
+            name:"Hellfire",
+            class:"melee"}],
+        armorPenetration: 0,
+        minionSlot: 0
+    },
+    {
+        name: "Ranger Emblem",
+        dmg: 0,
         dmgMelee: 0,
+        dmgRanged: 0.15,
+        dmgMagic: 0,
+        dmgSummon: 0,
+        dmgArrow: 0,
+        dmgBullet: 0,
+        dmgRocket: 0,
+        meleeSpeed: 0,
+        crit:0,
+        inflictDebuff: [],
+        armorPenetration: 0,
+        minionSlot: 0
+    },
+    {
+        name: "Warrior Emblem",
+        dmg: 0,
+        dmgMelee: 0.15,
         dmgRanged: 0,
         dmgMagic: 0,
         dmgSummon: 0,

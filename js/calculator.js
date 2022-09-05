@@ -1,6 +1,6 @@
-import { weapon } from './weapon.js';
-import  { reforgeUniversal, reforgeCommon, reforgeMelee, reforgeRanged, reforgeMagic, reforgeAccessory } from './reforge.js';
-import {accessory} from './accessory.js'
+import { weapon } from './data/weapon.js';
+import  { reforgeUniversal, reforgeCommon, reforgeMelee, reforgeRanged, reforgeMagic, reforgeAccessory } from './data/reforge.js';
+import {accessory} from './data/accessory.js'
 
  document.getElementById("weaponName").onchange = search
  document.getElementById("weaponReforge").onchange = reforgeSearch
@@ -126,23 +126,36 @@ function reforgeSearch() {
 }
 
 function boostCalc() {
-    var damage = parseFloat(document.getElementById("weaponDamage").value);
-    var crit = parseFloat(document.getElementById("weaponCrit").value);
-    var usetime = parseFloat(document.getElementById("weaponUseTime").value);
-    var critBoost = parseFloat(document.getElementById("reforgeCrit").value)
-    var usetimeBoost = (1-parseFloat(document.getElementById("reforgeSpeed").value))
     var boosts = equipCalc()
-
+    var damage = parseFloat(document.getElementById("weaponDamage").value);
     var damage2 = Math.round(damage * (1+parseFloat(document.getElementById("reforgeDamage").value)));
-    damage2 = boosts.dmg
-    var accessory_crit = (boosts.crit)
-    var crit2 = crit + critBoost + boosts.crit;
+    var dmgBoost = boosts.dmg
+    console.log(document.getElementById("weaponDamageType").value)
+    if (document.getElementById("weaponDamageType").value == "melee") {
+        dmgBoost += boosts.dmgMelee;
+    }
+    if (document.getElementById("weaponDamageType").value == "ranged") {
+        dmgBoost += boosts.dmgRanged;
+    }
+    if (document.getElementById("weaponDamageType").value == "magic") {
+        dmgBoost += boosts.dmgMagic;
+    }
+    if (document.getElementById("weaponDamageType").value == "summon") {
+        dmgBoost += boosts.dmgSummon;
+    }
+    damage2 = damage2 * (1 +dmgBoost);
+    var damageBoost = damage2/damage
+    var crit = parseFloat(document.getElementById("weaponCrit").value);
+    var crit2 = crit + parseFloat(document.getElementById("reforgeCrit").value + boosts.crit);
+    var usetime = parseFloat(document.getElementById("weaponUseTime").value);
+    var usetimeBoost = (1-parseFloat(document.getElementById("reforgeSpeed").value))
+
     var usetime2 = Math.round(usetime*usetimeBoost);
     document.getElementById("boostDamage").innerHTML = damage2;
-    document.getElementById("boostCrit").innerHTML = crit2;
+    document.getElementById("boostCrit").innerHTML = Math.round(crit2*10000)/10000;
     document.getElementById("boostUseTime").innerHTML = usetime2;
     document.getElementById("boostDamageMult").value = Math.round(100*(damageBoost))/100;
-    document.getElementById("boostCritMult").value = Math.round(10000*(critBoost))/10000;
+    document.getElementById("boostCritMult").value = Math.round(10000*(crit2-crit))/10000;
     document.getElementById("boostUseTimeMult").value = Math.round(100*(usetimeBoost))/100;
     damageCalc()
 }
@@ -188,7 +201,12 @@ function equipCalc(){
     boosts.dmgRocket += accessory[value].dmgRocket;
     boosts.crit += accessory[value].crit;
     boosts.meleeSpeed += accessory[value].meleeSpeed;
-    boosts.inflictDebuff.concat(accessory[value].inflictDebuff);
+    if (accessory[value].inflictDebuff.length > 0){
+        for (var i2=0; i2 < accessory[value].inflictDebuff.length; i2++) {
+            console.log(i2)
+            console.log(boosts.inflictDebuff)
+            console.log(boosts.inflictDebuff[i2])
+            boosts.inflictDebuff.push(accessory[value].inflictDebuff[i2]);}}
     boosts.armorPenetration += accessory[value].armorPenetration;
     boosts.minionSlot += accessory[value].minionSlot;
     }
@@ -202,10 +220,22 @@ function equipCalc(){
     document.getElementById("acessory_dmgRocket").text = boosts.dmgRocket;
     document.getElementById("acessory_meleeSpeed").text = boosts.meleeSpeed;
     document.getElementById("acessory_crit").text = boosts.crit;
-    document.getElementById("acessory_inflictDebuff").text = boosts.inflictDebuff;
+    var debuffText = "";
+    if (boosts.inflictDebuff.length > 0) {
+        for (var i=0; i < boosts.inflictDebuff.length; i++) {
+            debuffText = debuffText + boosts.inflictDebuff[i].name;
+            if (i+1 < boosts.inflictDebuff.length) {
+                debuffText = debuffText + ", ";
+            }}
+    }else {
+        debuffText = "none";
+    }
+    document.getElementById("acessory_inflictDebuff").text = debuffText;
     document.getElementById("acessory_armorPenetration").text = boosts.armorPenetration;
     document.getElementById("acessory_minionSlot").text = boosts.minionSlot;
+    console.log(boosts.inflictDebuff);
     return boosts;
+
     
 }
 
