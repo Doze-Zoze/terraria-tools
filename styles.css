@@ -8,6 +8,102 @@
     --background: linear-gradient(0deg, rgb(98, 150, 76) 0%, rgb(135, 201, 221) 100%);
     --shaded-bg: #483730;
 }
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding: 0;
+    /* margin: 0; */
+    color:var(--text);
+    background:var(--background);
+    background-image: url('background.png');
+    backdrop-filter: blur(7px);
+    /*background-image: url(https://terraria.wiki.gg/images/0/0e/Site-background-overworld.jpg);*/
+    background-size: cover;
+    height: auto;
+    height: 100%;
+    background-repeat: no-repeat;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+#header {
+    position: sticky;
+    width: fit-content;
+    height: fit-content;
+    top: 10px;
+    margin: 0px 5px;
+    background-color: var(--backdrop-bg);
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--backdrop-border);
+    border-width: 2px;
+}
+#header > * {
+    display: inline;
+    padding: 5px;
+    margin: 5px;
+    background-color: var(--foreground-bg);
+    border-color: var(--foreground-border);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: var(--text);
+    appearance: button;
+}
+#header > div:hover {
+    background-color: var(--shaded-bg);
+}
+#header > * > a {
+    color: var(--text);
+    text-decoration: none;
+}
+#footer {
+    background-color: var(--shaded-bg);
+    border-color: var(--foreground-border);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5px 15px 5px 15px;
+}
+div#title {
+    background-color: var(--backdrop-bg);
+    border: var(--backdrop-border);
+    margin: 10px auto 10px auto;
+    padding:0px;
+    display: flex;
+    text-align: center;;
+    border-radius: 10px;
+    font-size: 2em;
+    border-style: solid;
+}
+#title > * {
+    flex-grow: 1;
+}
+div#FlexContainer {
+    background-color: var(--backdrop-bg);
+    border: var(--backdrop-border);
+    display: flex;
+    flex-flow: row wrap;
+    border-style:solid;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    justify-content: center;
+    height: 100%;
+}
+@media (min-width:960px) {
+    div#title, #FlexContainer {
+        max-width: 66%;
+    }
+    
+}
+@media (max-width:960px) {
+    div#title {
+        max-width: 100%;
+    }
+    
+}
 .label {
     font-size: 0.8em;
 }
@@ -40,48 +136,8 @@ input {
     max-height: 1em;
     text-align: center;
 }
-div#title {
-    background-color: var(--backdrop-bg);
-    border: var(--backdrop-border);
-    margin:0 auto 7px auto;
-    padding:0px;
-    display: flex;
-    text-align: center;;
-    border-radius: 10px;
-    font-size: 2em;
-    border-style: solid;
-}
-#title > * {
-    flex-grow: 1;
-}
-#title > :first-child {
-    text-align: left;
-    padding: 0 15px;
-    font-size: 0.75em;
-    flex-basis: 0px;
-    flex-shrink: 1;
-    color:var(--input-bg);
-}
-#title > :last-child {
-    text-align: right;
-    padding: 0 15px;
-    font-size: 0.75em;
-    flex-basis: 0px;
-    flex-shrink: 1;
-    color:var(--input-bg);
-}
 
-div#FlexContainer {
-    background-color: var(--backdrop-bg);
-    border: var(--backdrop-border);
-    display: flex;
-    flex-flow: row wrap;
-    border-style:solid;
-    margin: 0 auto;
-    border-radius: 10px;
-    justify-content: center;
-    height: 100%;
-}
+
 #DividerWrapper{
         display: flex;
         flex-flow: row wrap;
@@ -94,33 +150,11 @@ div#FlexContainer {
     flex-basis: 20%;
 }
 
-@media (min-width:960px) {
-    div#title, #FlexContainer {
-        max-width: 66%;
-    }
-    
-}
-@media (max-width:960px) {
-    div#title {
-        max-width: 100%;
-    }
-    
-}
+
 div#title > *{
     margin:auto;
 }
 
-body {
-    color:var(--text);
-    background:var(--background);
-    /*background-image: url(https://terraria.wiki.gg/images/0/0e/Site-background-overworld.jpg);*/
-    background-size: cover;
-    height: auto;
-    min-height: 100%;
-    background-repeat: no-repeat;
-    line-height: 1.5;
-    font-family: sans-serif;
-}
 select, button {
     color: var(--text);
     background-color: var(--shaded-bg);

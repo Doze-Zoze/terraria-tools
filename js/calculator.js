@@ -51,7 +51,13 @@ var stat_boosts = {
     damageReduction:0,
     inflictDebuff: [],
     specialEffect: []
-} 
+}
+var selectedArmor = {
+    head: "",
+    body: "",
+    legs: "",
+    set: ""
+}
 var weapon_stats = {
     reforgepool : ["universal"],
     damage:0,
@@ -84,6 +90,7 @@ var damage_stats ={
 /*Set functions to run*/
  document.getElementById("weaponName").onchange = getWeaponStats
  document.getElementById("weaponReforge").onchange = reforgeSearch
+ document.getElementById("weaponDamageType").onchange = updateCalculations
  for (let i = 1; i <= 7; i++) {
     document.getElementById("accesorySlot"+String(i)).onchange = updateCalculations
     document.getElementById("accesorySlot"+String(i)+"Reforge").onchange = updateCalculations
@@ -96,8 +103,7 @@ var damage_stats ={
 
 
  /*search for weapon stats */
-function writeToScreen() {
-    /*weapon base stats*/
+function earlyWriteToScreen() {
     document.getElementById("weaponDamage").value = weapon_stats.damage;
     document.getElementById("weaponCrit").value = weapon_stats.crit
     document.getElementById("weaponUseTime").value = weapon_stats.usetime
@@ -107,6 +113,11 @@ function writeToScreen() {
     document.getElementById("reforgeDamage").value = weapon_reforge.damage;
     document.getElementById("reforgeCrit").value = weapon_reforge.crit;
     document.getElementById("reforgeSpeed").value = weapon_reforge.speed
+}
+ 
+function writeToScreen() {
+    /*weapon base stats*/
+
     /*weapon stats */
     document.getElementById("boostDamage").innerHTML = damage_stats.damage;
     document.getElementById("boostCrit").innerHTML = Math.round(damage_stats.crit*10000)/10000;
@@ -134,7 +145,7 @@ function getWeaponStats() {
     var index = weapon.findIndex(r => r.name === weaponName);
     weapon_stats = weapon[index]
     updateReforgePool()
-    writeToScreen()
+    earlyWriteToScreen()
 }
 
 function updateReforgePool() {
@@ -252,6 +263,7 @@ function boostCalc() {
         stat_boosts.dmg.inUse += stat_boosts.dmg.summon;
         stat_boosts.crit.inUse += stat_boosts.crit.summon;
     }
+    console.log(stat_boosts.dmg.inUse)
     damage_stats.damage = damage_stats.damage * (1 +stat_boosts.dmg.inUse);
     damage_stats.crit = damage_stats.crit + stat_boosts.crit.inUse;
     damage_stats.usetime = Math.round(weapon_stats.usetime * (1-weapon_reforge.speed));
@@ -345,55 +357,6 @@ function equipCalc(){
         inflictDebuff: [],
         specialEffect: []
     };
-    stat_boosts = {
-    defense: 0,
-    dmg: {
-        inUse: 0,
-        all: 0,
-        melee: 0,
-        ranged: 0,
-        arrow: 0,
-        bullet: 0,
-        rocket: 0,
-        magic: 0,
-        summon: 0,
-    },
-    crit: {
-        inUse: 0,
-        all: 0,
-        melee: 0,
-        ranged: 0,
-        arrow: 0,
-        bullet: 0,
-        rocket: 0,
-        magic: 0,
-        summon: 0
-    },
-    armorPenetration: {
-        inUse: 0,
-        all: 0,
-        melee: 0,
-        ranged: 0,
-        arrow: 0,
-        bullet: 0,
-        rocket: 0,
-        magic: 0,
-        summon: 0
-    },
-    meleeSpeed: 0,
-    moveSpeed: 0,
-    ammoConsumption: 0,
-    maxMana: 0,
-    manaConsumption:0,
-    lifeRegen: 0,
-    damageReduction: 0,
-    aggro: 0,
-    minionSlots: 0,
-    sentrySlots: 0,
-    damageReduction:0,
-    inflictDebuff: [],
-    specialEffect: []
-};
     /*Adding accessory slot boosts*/
     for (let i = 1; i <= 7; i++) { 
         var select = document.getElementById("accesorySlot"+String(i))
@@ -413,24 +376,27 @@ function equipCalc(){
         
     }
     /*Adding armor slot boosts*/
-    boostCombine(stat_boosts, armorHead[document.getElementById("armorHead").options[document.getElementById("armorHead").selectedIndex].value])
-    boostCombine(stat_boosts, armorBody[document.getElementById("armorChest").options[document.getElementById("armorChest").selectedIndex].value])
-    boostCombine(stat_boosts, armorLegs[document.getElementById("armorLegs").options[document.getElementById("armorLegs").selectedIndex].value])
-    /*Adding armor set bonus*/
-    var setBonusList = [
-        armorHead[document.getElementById("armorHead").options[document.getElementById("armorHead").selectedIndex].value].set,
-        armorBody[document.getElementById("armorChest").options[document.getElementById("armorChest").selectedIndex].value].set,
-        armorLegs[document.getElementById("armorLegs").options[document.getElementById("armorLegs").selectedIndex].value].set
-    ]
-    var setBonusResult = setBonusList.shift().filter(function(v) {
-        return setBonusList.every(function(a) {
-            return a.indexOf(v) !== -1;
-        });
-    });
-    let obj = armorSet.find(o => o.name == setBonusResult[0]);
-    if (obj != undefined) {
-        boostCombine(stat_boosts,obj)
+    selectedArmor = {
+        head: armorHead[document.getElementById("armorHead").options[document.getElementById("armorHead").selectedIndex].value],
+        body: armorBody[document.getElementById("armorChest").options[document.getElementById("armorChest").selectedIndex].value],
+        legs: armorLegs[document.getElementById("armorLegs").options[document.getElementById("armorLegs").selectedIndex].value],
+        set: ""
     }
+    boostCombine(stat_boosts, selectedArmor.head)
+    boostCombine(stat_boosts, selectedArmor.body)
+    boostCombine(stat_boosts, selectedArmor.legs)
+    /*Adding armor set bonus*/
+    for (var len in armorSet) {
+        if ((armorSet[len].armor.head == undefined) || (armorSet[len].armor.head.includes(selectedArmor.head.name))) {
+            if((armorSet[len].armor.body == undefined) || (armorSet[len].armor.body.includes(selectedArmor.body.name))) {
+                if ((armorSet[len].armor.legs == undefined) || (armorSet[len].armor.legs.includes(selectedArmor.legs.name))) {
+                    selectedArmor.set = armorSet[len]
+                    boostCombine(stat_boosts, selectedArmor.set)
+                }
+            }
+        }
+    }
+    
     /*class-specifc damage bonuses*/
     if (document.getElementById("weaponDamageType").value == "melee") {
         stat_boosts.dmg.inUse = Math.round(10000*(stat_boosts.dmg.all + stat_boosts.dmg.melee))/10000;
@@ -494,18 +460,7 @@ function updateCalculations(){
     equipCalc()
     boostCalc()
 }
-    
-function equipBoostHide() {
-    const toHide = document.querySelectorAll('.accessoryHide');
-    toHide.forEach(element => {
-        if (element.style.display == "none") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-        
-    });
-}
+
 function selectInputName(elementID, variable) {
     var select = document.getElementById(elementID);
     for (var i = 0; i < variable.length; i++){
