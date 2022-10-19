@@ -6113,6 +6113,47 @@ const armorSet = [
             legs: ["Adamantite Leggings"],
         },
         manaConsumption: 0.19,
+    },
+    {
+      name: "Apprentice",
+      armor: {
+        head: ["Apprentice's Hat"],
+        body: ["Apprentice's Robe"],
+        legs: ["Apprentice's Trousers"],
+      },
+      sentrySlots: 1,
+      specialEffect: [
+        {
+          name: "ApprenticeFlameburstBoost",
+        }
+      ]
+    },
+    {
+      name: "Bee",
+      armor: {
+        head: ["Bee Headgear"],
+        body: ["Bee Breastplate"],
+        legs: ["Bee Greaves"],
+      },
+      dmg: {
+        summon: 0.1,
+      },
+    },
+    {
+      name: "Boreal Wood",
+      armor: {
+        head: ["Boreal Wood Helmet"],
+        body: ["Boreal Wood Breastplate"],
+        legs: ["Boreal Wood Greaves"]
+      }
+    },
+    {
+      name: "",
+      armor: {
+        head: [""],
+        body: [""],
+        legs: [""]
+      }
     }
 ];
 
