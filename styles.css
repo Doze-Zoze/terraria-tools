@@ -118,8 +118,8 @@ div#FlexContainer {
 .accImg {
     width: 100%;
     height: 100%;
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 40px;
+    max-height: 40px;
     object-fit: contain;
 }
 .itemWrapper {
@@ -133,7 +133,7 @@ div#FlexContainer {
 .accWrapper {
     text-align: center;
     width: min-content;
-    min-width: 30px;
+    min-width: 40px;
     color: var(--text-light);
     text-decoration: none;
     text-underline-offset:5px;
@@ -159,6 +159,9 @@ div#FlexContainer {
 .guideaccwrapper > .guidewrapper {
     width: 20%;
     text-decoration: underline;
+}
+.guideNote {
+    font-size:small;
 }
 .wrapper {
     padding: 3px;
