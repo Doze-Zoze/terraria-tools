@@ -161,7 +161,8 @@ div#FlexContainer {
     text-decoration: underline;
 }
 .guideNote {
-    font-size:small;
+    font-size:medium;
+    margin: 5px
 }
 .wrapper {
     padding: 3px;

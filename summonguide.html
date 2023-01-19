@@ -1,217 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function(){
+          $('#summon1').load("summonguide/1.html");
+          $('#summon2').load("summonguide/2.html");
+          $('#summon3').load("summonguide/3.html");
+       });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calamity 2.0.1.2 Summon Guide</title>
     <link rel="stylesheet" href="./styles.css">
 <body>
     <div id="header" class="sticky"><div><a href="./index.html">Home</a></div><div><a href="https://terraria.wiki.gg">Terraria Wiki</a></div><div><a href="https://calamitymod.wiki.gg">Calamity Wiki</a></div></div>
-    <div id="title"><a>Calamity 2.0.1.2 Summoner Guide (WIP)</a></div>
+    <div id="title"><a>Calamity 2.0.1.5 Summoner Guide (WIP)</a></div>
     <div id="FlexContainer">
         <div id="DividerWrapper">
-            <a href="./summonerguide.png"><img src="summonerguide.png" style="width: 100%"></a>
-            <div id="WeaponStatsBox" class="divider">
-                <a class="boxTitle">
-                    <img class="itemImg" src="https://calamitymod.wiki.gg/images/6/6d/Desert_Scourge_map.png" alt="Desert Scourge">
-                    <img class="itemImg" src="https://terraria.wiki.gg/images/5/5e/Map_Icon_King_Slime.png" alt="King Slime">
-                </a>
-                <a class="boxTitle">Minions</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/6/6d/Belladonna_Spirit_Staff.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Belladonna_Spirit_Staff" style="color: inherit;text-decoration: inherit;">Belladonna Spirit Staff</a>
-                    </div>                    
-                </span>
-                <a class="boxTitle">Sentries</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/c/c1/Rusty_Beacon_Prototype.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Rusty_Beacon_Prototype" style="color: inherit;text-decoration: inherit;">Rusty Beacon Prototype</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Support Weapons</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/a/a0/Snapthorn.png">
-                        <a href="https://terraria.wiki.gg/wiki/Snapthorn" style="color: inherit;text-decoration: inherit;">Snapthorn</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Armor</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/2/24/Wulfrum_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Wulfrum_armor" style="color: inherit;text-decoration: inherit;">Wulfrum Armor</a>
-                    </div>
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/9/9d/Copper_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Vanilla_changes#Armor" style="color: inherit;text-decoration: inherit;">Copper Armor</a>
-                    </div>
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/d/d1/Tin_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Vanilla_changes#Armor" style="color: inherit;text-decoration: inherit;">Tin Armor</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Accessories</a>
-                <span class="guideaccwrapper">
-                    <span class = "guidewrapper">Offense
-                        <a href="https://terraria.wiki.gg/wiki/Shark_Tooth_Necklace" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/4/4a/Shark_Tooth_Necklace.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Abyssal_Amulet" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/8/84/Abyssal_Amulet.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Spirit_Glyph" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/4/43/Spirit_Glyph.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Wulfrum_Battery" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/7/74/Wulfrum_Battery.png">
-                        </a>
-                    </span>
-                    <span class ="guidewrapper">Defense
-                        <a href="https://calamitymod.wiki.gg/wiki/Rover_Drive" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/0/03/Rover_Drive.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Life_Jelly" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/1/1a/Life_Jelly.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Giant_Shell" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/c/c9/Giant_Shell.png">
-                        </a>
-                        <a href="https://terraria.wiki.gg/wiki/Band_of_Regeneration" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/0/0f/Band_of_Regeneration.png">
-                        </a>
-                    </span>
-                    <!--
-                        <a href="https://calamitymod.wiki.gg/wiki/" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="">
-                        </a>
-                        <a href="https://terraria.wiki.gg/wiki/" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="">
-                        </a>
-                    -->
-                    <span class = "guidewrapper">Mobility
-                        <a href="https://terraria.wiki.gg/wiki/Hermes_Boots" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/2/29/Hermes_Boots.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Sandstorm_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/6/6d/Sandstorm_in_a_Bottle.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Blizzard_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/e/ed/Blizzard_in_a_Bottle.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Frog_Leg" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/9/9f/Frog_Leg.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Cloud_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/4/43/Cloud_in_a_Bottle.png">
-                        </a>
-                    </span>
-                </span>
-               
-            </div>
-        <!--EoC, Crab
-            <div id="WeaponStatsBox" class="divider">
-                <a class="boxTitle">
-                    <img class="itemImg" src="https://calamitymod.wiki.gg/images/6/6d/Desert_Scourge_map.png" alt="Eye of Cthulhu">
-                    <img class="itemImg" src="https://terraria.wiki.gg/images/5/5e/Map_Icon_King_Slime.png" alt="Crabulon">
-                </a>
-                <a class="boxTitle">Minions</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/6/6d/Belladonna_Spirit_Staff.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Belladonna_Spirit_Staff" style="color: inherit;text-decoration: inherit;">Belladonna Spirit Staff</a>
-                    </div>                    
-                </span>
-                <a class="boxTitle">Sentries</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/c/c1/Rusty_Beacon_Prototype.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Rusty_Beacon_Prototype" style="color: inherit;text-decoration: inherit;">Rusty Beacon Prototype</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Support Weapons</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/a/a0/Snapthorn.png">
-                        <a href="https://terraria.wiki.gg/wiki/Snapthorn" style="color: inherit;text-decoration: inherit;">Snapthorn</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Armor</a>
-                <span class = "guidewrapper">
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://calamitymod.wiki.gg/images/2/24/Wulfrum_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Wulfrum_armor" style="color: inherit;text-decoration: inherit;">Wulfrum Armor</a>
-                    </div>
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/9/9d/Copper_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Vanilla_changes#Armor" style="color: inherit;text-decoration: inherit;">Copper Armor</a>
-                    </div>
-                    <div class="itemWrapper">
-                        <img class="itemImg" src="https://terraria.wiki.gg/images/d/d1/Tin_armor.png">
-                        <a href="https://calamitymod.wiki.gg/wiki/Vanilla_changes#Armor" style="color: inherit;text-decoration: inherit;">Tin Armor</a>
-                    </div>
-                </span>
-                <a class="boxTitle">Accessories</a>
-                <span class="guideaccwrapper">
-                    <span class = "guidewrapper">Offense
-                        <a href="https://terraria.wiki.gg/wiki/Shark_Tooth_Necklace" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/4/4a/Shark_Tooth_Necklace.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Abyssal_Amulet" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/8/84/Abyssal_Amulet.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Spirit_Glyph" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/4/43/Spirit_Glyph.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Wulfrum_Battery" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/7/74/Wulfrum_Battery.png">
-                        </a>
-                    </span>
-                    <span class ="guidewrapper">Defense
-                        <a href="https://calamitymod.wiki.gg/wiki/Rover_Drive" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/0/03/Rover_Drive.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Life_Jelly" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/1/1a/Life_Jelly.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Giant_Shell" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://calamitymod.wiki.gg/images/c/c9/Giant_Shell.png">
-                        </a>
-                        <a href="https://terraria.wiki.gg/wiki/Band_of_Regeneration" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/0/0f/Band_of_Regeneration.png">
-                        </a>
-                    </span>
-                    <!--
-                        <a href="https://calamitymod.wiki.gg/wiki/" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="">
-                        </a>
-                        <a href="https://terraria.wiki.gg/wiki/" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="">
-                        </a>
-                    --><!--
-                    <span class = "guidewrapper">Mobility
-                        <a href="https://terraria.wiki.gg/wiki/Hermes_Boots" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/2/29/Hermes_Boots.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Sandstorm_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/6/6d/Sandstorm_in_a_Bottle.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Blizzard_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/e/ed/Blizzard_in_a_Bottle.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Frog_Leg" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/9/9f/Frog_Leg.png">
-                        </a>
-                        <a href="https://calamitymod.wiki.gg/wiki/Cloud_in_a_Bottle" style="color: inherit;text-decoration: inherit;">
-                            <img class="accImg" src="https://terraria.wiki.gg/images/4/43/Cloud_in_a_Bottle.png">
-                        </a>
-                    </span>
-                </span>-->
-               
-            </div>
+            <div id="summon1" class="divider"></div>
+            <div id="summon2" class="divider"></div>
+            <div id="summon3" class="divider"></div>
         </div>
     </div>
     
-    <div id="footer">Made by DozeZoze for Calamity version 2.0.1.2. This is my opinion, and is not a list of the only viable options</div>
+    
+    <div id="footer">Made by DozeZoze for Calamity version 2.0.1.5. This is my opinion, and is not a list of the only viable options</div>
 </body>
